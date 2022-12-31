@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name         Watch9 Reconstruct
-// @version      2.5.2
+// @name         Watch9 Reconstruct (modified by bit.whisperer)
+// @version      2.5.4
 // @description  Restores the old watch layout from before 2019
-// @author       Aubrey P.
+// @author       Aubrey P, bit.whisperer
 // @icon         https://www.youtube.com/favicon.ico
 // @updateURL    https://github.com/aubymori/Watch9Reconstruct/raw/main/Watch9Reconstruct.user.js
-// @namespace    aubymori
+// @namespace    bit.whisperer
 // @license      Unlicense
 // @match        www.youtube.com/*
 // @grant        none
@@ -14,7 +14,7 @@
 
 const w9rOptions = {
     oldAutoplay: true,        // Classic autoplay renderer with "Up next" text
-    removeBloatButtons: true  // Removes "Clip", "Thanks", "Download", etc.
+    removeBloatButtons: false  // Removes "Clip", "Thanks", "Download", etc. Now set to false since this doesn't work and its an easy fix
 }
 
 /**
@@ -447,24 +447,6 @@ async function buildAutoplay() {
     // Let script know we've done this initial build
     watchFlexy.setAttribute("watch9-built", "");
 
-    // Publish date
-    var newUploadDate = formatUploadDate(primaryInfo.data.dateText.simpleText, isVideoPublic(), language);
-    uploadDate.innerText = newUploadDate;
-
-    // Sub count
-    var newSubCount;
-    if (secondaryInfo.data.owner.videoOwnerRenderer.subscriberCountText) {
-        newSubCount = formatSubCount(secondaryInfo.data.owner.videoOwnerRenderer.subscriberCountText.simpleText, language);
-    } else {
-        newSubCount = "0";
-    }
-    var w9rSubCount = document.createElement("yt-formatted-string");
-    w9rSubCount.classList.add("style-scope", "deemphasize");
-    w9rSubCount.text = {
-        simpleText: newSubCount
-    };
-    subBtn.insertAdjacentElement("beforeend", w9rSubCount);
-
     // Bloat buttons
     if (w9rOptions.removeBloatButtons) removeBloatButtons();
 
@@ -483,16 +465,6 @@ function updateWatch9() {
     const subCnt = secondaryInfo.querySelector("yt-formatted-string.deemphasize");
     const uploadDate = secondaryInfo.querySelector(".date.ytd-video-secondary-info-renderer");
     const language = yt.config_.HL.split("-")[0] ?? "en";
-
-    // Publish date
-    var newUploadDate = formatUploadDate(primaryInfo.data.dateText.simpleText, isVideoPublic(), language);
-    uploadDate.innerText = newUploadDate;
-
-    // Sub count
-    var newSubCount = formatSubCount(secondaryInfo.data.owner.videoOwnerRenderer.subscriberCountText.simpleText, language);
-    subCnt.text = {
-        simpleText: newSubCount
-    };
 
     // Bloat buttons
     if (w9rOptions.removeBloatButtons) removeBloatButtons();
@@ -547,19 +519,6 @@ document.addEventListener("DOMContentLoaded", function tmp() {
 
     yt-formatted-string.deemphasize:empty {
         margin-left: 0;
-    }
-
-    /**
-     * Prevent sub count from appearing on the "Edit video" button since
-     * it uses the same element as subscribe button
-     */
-    ytd-button-renderer.style-primary yt-formatted-string.deemphasize {
-        display: none;
-    }
-
-    #info-strings.ytd-video-primary-info-renderer,
-    #owner-sub-count.ytd-video-owner-renderer {
-        display: none !important;
     }
     </style>
     `);
