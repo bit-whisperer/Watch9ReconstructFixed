@@ -6,7 +6,7 @@ Introduced in 2017, Watch9 was the Watch page's layout up until 2019. This users
 
 This was broken with the new youtube updates but was able to work again with some code rearranging.
 
-Autoplay layout was tested and appears to work. May not look like the original screenshot though.
+Autoplay layout was tested and appears to work.
 
 # Screenshots
 ![Watch page, with Watch9 Reconstruct active.](assets/Preview.png)
