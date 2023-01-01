@@ -14,7 +14,7 @@
 
 const w9rOptions = {
     oldAutoplay: true,        // Classic autoplay renderer with "Up next" text
-    removeBloatButtons: false  // Removes "Clip", "Thanks", "Download", etc. Now set to false since this doesn't work and im too lazy to remove the code
+    removeBloatButtons: false  // Removes "Clip", "Thanks", "Download", etc. Now set to false since this doesn't work and im too lazy to remove or fix the code
 }
 
 /**
