@@ -4,7 +4,7 @@
 # Watch9 Reconstruct
 Introduced in 2017, Watch9 was the Watch page's layout up until 2019. This userscript aims to restore that layout.
 
-This was broken with the new youtube updates but was able to work again with some code rearranging. It will not look like it did with the original script but this is by far in my opinion the definitive watch page layout blending the old with the new.
+This was broken with the new youtube updates but was able to work again with some code rearranging. It will not look like it did with the original script but this is by far in my opinion the definitive watch page layout blending the old with the new. This was a personal project to fix this script, since I was dissatisfied with the new layout shortening the date and views counter.
 
 Autoplay layout was tested and fully working.
 
