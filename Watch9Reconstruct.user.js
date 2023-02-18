@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Watch9 Reconstruct (modified by bit.whisperer)
-// @version      2.5.4
+// @version      2.5.5
 // @description  Restores the old watch layout from before 2019
 // @author       Aubrey P, bit.whisperer
 // @icon         https://www.youtube.com/favicon.ico
@@ -508,7 +508,7 @@ document.addEventListener("DOMContentLoaded", function tmp() {
     }
 
     ytd-video-view-count-renderer[small] {
-        font-size: 1.6rem !important;
+        font-size: 1.4rem !important;
         line-height: 2.2rem !important;
     }
 
