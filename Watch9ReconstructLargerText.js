@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Watch9 Reconstruct Larger Text (modified by bit.whisperer)
-// @version      2.5.5
+// @version      2.5.5L
 // @description  Larger text version of the forked script for those interested
 // @author       Aubrey P, bit.whisperer
 // @icon         https://www.youtube.com/favicon.ico
@@ -13,7 +13,7 @@
 // ==/UserScript==
 
 const w9rOptions = {
-    oldAutoplay: false,        // Classic autoplay renderer with "Up next" text
+    oldAutoplay: true,        // Classic autoplay renderer with "Up next" text
     removeBloatButtons: false  // Removes "Clip", "Thanks", "Download", etc. Now set to false since this doesn't work and its an easy fix
 }
 
