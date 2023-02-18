@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Watch9 Reconstruct Larger Text (modified by bit.whisperer)
-// @version      2.5.5L
+// @version      2.5.5
 // @description  Larger text version of the forked script for those interested
 // @author       Aubrey P, bit.whisperer
 // @icon         https://www.youtube.com/favicon.ico
