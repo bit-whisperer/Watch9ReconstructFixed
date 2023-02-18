@@ -507,11 +507,6 @@ document.addEventListener("DOMContentLoaded", function tmp() {
         display: block !important;
     }
 
-    ytd-video-view-count-renderer[small] {
-        font-size: 1.4rem !important;
-        line-height: 2.2rem !important;
-    }
-
     yt-formatted-string.deemphasize {
         opacity: .85;
         margin-left: 6px;
