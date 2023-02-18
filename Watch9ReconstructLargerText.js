@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Watch9 Reconstruct Larger Text (modified by bit.whisperer)
 // @version      2.5.5
-// @description  Restores the old watch layout from before 2019
+// @description  Larger text version of the forked script for those interested
 // @author       Aubrey P, bit.whisperer
 // @icon         https://www.youtube.com/favicon.ico
 // @updateURL    https://github.com/bit-whisperer/Watch9ReconstructFixed/raw/main/Watch9ReconstructLargerText.user.js
