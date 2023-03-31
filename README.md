@@ -8,6 +8,8 @@ The original script was broken with the new youtube updates but was able to work
 
 Autoplay layout was tested and fully working.
 
+If you want to remove the download button use this userscript: https://greasyfork.org/en/scripts/439290-youtube-hide-download-button
+
 # Screenshots
 ![Watch page, with Watch9 Reconstruct active.](assets/Preview.png)
 ![Old autoplay with "Up next" title](assets/Autoplay.png)
