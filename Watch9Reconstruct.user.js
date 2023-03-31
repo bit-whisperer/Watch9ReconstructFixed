@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Watch9 Reconstruct (modified by bit.whisperer)
-// @version      2.5.5
+// @version      2.5.6
 // @description  Restores the old watch layout from before 2019
 // @author       Aubrey P, bit.whisperer
 // @icon         https://www.youtube.com/favicon.ico
@@ -14,7 +14,6 @@
 
 const w9rOptions = {
     oldAutoplay: true,        // Classic autoplay renderer with "Up next" text
-    removeBloatButtons: false  // Removes "Clip", "Thanks", "Download", etc. Now set to false since this doesn't work and im too lazy to remove or fix the code
 }
 
 /**
@@ -288,34 +287,6 @@ function inArray(needle, haystack) {
 }
 
 /**
- * Remove bloaty action buttons.
- *
- * @returns {void}
- */
-function removeBloatButtons() {
-    var primaryInfo = document.querySelector("ytd-video-primary-info-renderer");
-    var actionBtns = primaryInfo.data.videoActions.menuRenderer.topLevelButtons;
-
-    // Remove the action buttons accordingly.
-    for (var i = 0; i < actionBtns.length; i++) {
-        if (actionBtns[i].downloadButtonRenderer) {
-            actionBtns.splice(i, 1);
-            i--;
-        } else if (actionBtns[i].buttonRenderer) {
-            if (inArray(actionBtns[i].buttonRenderer.icon.iconType, ["MONEY_HEART", "CONTENT_CUT"])) {
-                actionBtns.splice(i, 1);
-                i--;
-            }
-        }
-    }
-
-    // Refresh the primary info's data.
-    var tmp = primaryInfo.data;
-    primaryInfo.data = {};
-    primaryInfo.data = tmp;
-}
-
-/**
  * Is the current video public? Or is it unlisted/private?
  *
  * @returns {boolean}
@@ -447,9 +418,6 @@ async function buildAutoplay() {
     // Let script know we've done this initial build
     watchFlexy.setAttribute("watch9-built", "");
 
-    // Bloat buttons
-    if (w9rOptions.removeBloatButtons) removeBloatButtons();
-
     // Autoplay
     if (w9rOptions.oldAutoplay && shouldHaveAutoplay()) buildAutoplay();
 }
@@ -465,9 +433,6 @@ function updateWatch9() {
     const subCnt = secondaryInfo.querySelector("yt-formatted-string.deemphasize");
     const uploadDate = secondaryInfo.querySelector(".date.ytd-video-secondary-info-renderer");
     const language = yt.config_.HL.split("-")[0] ?? "en";
-
-    // Bloat buttons
-    if (w9rOptions.removeBloatButtons) removeBloatButtons();
 
     // Autoplay
     if (w9rOptions.oldAutoplay && shouldHaveAutoplay()) buildAutoplay();
