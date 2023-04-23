@@ -13,7 +13,7 @@
 // ==/UserScript==
 
 const w9rOptions = {
-    oldAutoplay: true,        // Classic autoplay renderer with "Up next" text
+    oldAutoplay: true        // Classic autoplay renderer with "Up next" text
 }
 
 /**
