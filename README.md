@@ -1,3 +1,5 @@
+## ⚠ NOW BROKEN DUE TO NEW YOUTUBE UPDATES AS OF 10/31/23. ⚠
+## Using [this stylus extension](https://userstyles.world/style/12576/youtube-full-view-count-and-date-updated) as a workaround.
 ## ⚠ MINIMAL LANGUAGE SUPPORT ⚠
 ## ⚠ PLEASE SEE [LOCALIZATION.MD](LOCALIZATION.md) ⚠
 
